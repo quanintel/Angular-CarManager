@@ -1,0 +1,29 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+        <h3 class="mb-3 text-center">Thêm thông tin xe mới</h3>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)]="InforCar.name" class="form-control" placeholder="Tên xe">
+        </div>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)]="InforCar.seat" class="form-control" placeholder="Chỗ ngồi">
+        </div>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)]="InforCar.origin" class="form-control" placeholder="Xuất xứ">
+        </div>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)]="InforCar.engine" class="form-control" placeholder="Động cơ">
+        </div>
+
+        <div class="form-group">
+            <input type="text" [(ngModel)]="InforCar.platesize" class="form-control" placeholder="Cỡ mâm">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" (click)="addCar()">Xác nhận</button>
+        </div>
+    </div>
+</div>

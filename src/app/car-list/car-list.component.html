@@ -1,0 +1,44 @@
+<div class="container custom-container-2">
+
+    <!-- Khi chưa có thông tin gì  -->
+    <div class="no-data text-center" *ngIf="Car.length == 0">
+        <p>There is no employee added yet!</p>
+        <button class="btn btn-outline-primary" routerLink="/add-car">Thêm thông tin xe mới</button>
+    </div>
+
+    <!-- Bảng danh sách -->
+    <div *ngIf="Car.length !== 0">
+        <h3 class="mb-3 text-center">Danh sách xe hơi</h3>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tên xe</th>
+                        <th scope="col">Số chỗ ngồi</th>
+                        <th scope="col">Xuất xứ</th>
+                        <th scope="col">Động cơ</th>
+                        <th scope="col">Cỡ mâm</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of Car">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.seat}}</td>
+                        <td>{{item.origin}}</td>
+                        <td>{{item.engine}}</td>
+                        <td>{{item.platesize}}</td>
+                        <td colspan="2">
+                            <button class="btn btn-primary mx-2" routerLink="/edit-car/{{item.id}}">Edit</button>
+                            <button class="btn btn-danger" (click)="deleteCar(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
